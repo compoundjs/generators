@@ -10,6 +10,6 @@ if (!process.env.TRAVIS) {
 
 global.getApp = function() {
     var app = require('./app')();
-    app.compound.generators.init(app);
+    app.compound.generators.init(app.compound);
     return app;
 };
