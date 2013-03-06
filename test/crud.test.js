@@ -1,10 +1,11 @@
 describe('crud', function() {
     var app = getApp();
+    var compound = app.compound;
 
     before(function() {
     });
 
     it('should generate scaffold', function() {
-        app.generators.perform('scaffold', ['post', 'title', 'content']);
+        compound.generators.perform('scaffold', ['post', 'title', 'content']);
     });
 });

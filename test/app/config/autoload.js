@@ -1,4 +1,4 @@
 module.exports = function (compound) {
-    return [require('../../')];
+    return [require('../../../')];
 };
 
