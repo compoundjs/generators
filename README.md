@@ -6,11 +6,11 @@ Generators for CompoundJS MVC framework.
 
 ### command
 
-compound generate model *modelName* \[*field*, ...\]
+<code>compound generate model <strong>modelName</strong> [ <strong>field</strong>, ... ]</code>
 
-*modelName:* word in singular form
+**modelName:** `word` in singular form
 
-*field:* word OR word:datatype, when datatype is missing String property created
+**field:** `word` OR `word:datatype`, when `:datatype` is missing `String` property created
 
 ### files
 
@@ -41,11 +41,11 @@ Generate controller with number of actions and views
 
 ### command
 
-compound generate controller *controllerName* \[*actionName*, ...\]
+<code>compound generate controller <strong>controllerName</strong> [<strong>actionName</strong>, ...]</code>
 
-*controllerName:* word (plural or singular form)
+**controllerName:** `word` (plural or singular form)
 
-*actionName:* word in camelcase with first lowercase letter
+**actionName:** `word` in camelcase with first lowercase letter
 
 ### files
 
@@ -84,13 +84,13 @@ schema. Most powerful generator for quick prototyping.
 
 ### command
 
-compound generate crud *modelName* \[*property*, ...\] \[*options*\]
+<code>compound generate crud <strong>modelName</strong> [ <strong>field</strong>, ... ] [ <strong>options</strong> ]</code>
 
-*modelName:* word in singular form
+**modelName:** `word` in singular form
 
-*field:* word OR word:datatype, when datatype is missing String property created
+**field:** `word` OR `word:datatype`, when `:datatype` is missing `String` property created
 
-*options:*
+**options:**
 
 - *--noeval* - create noeval controllers
 - *--tpl* - specify templating engine (ejs and jade supported)
