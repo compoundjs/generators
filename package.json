@@ -1,0 +1,23 @@
+{
+  "name": "generators",
+  "version": "0.0.1",
+  "description": "Generators for compoundjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --require should --require ./test/init.js test/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/compoundjs/generators.git"
+  },
+  "keywords": [
+    "compound",
+    "generators",
+    "model",
+    "controller",
+    "crud",
+    "scaffold"
+  ],
+  "author": "Anatoliy Chakkaev",
+  "license": "MIT"
+}
