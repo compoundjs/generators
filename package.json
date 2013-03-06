@@ -3,6 +3,14 @@
   "version": "0.0.1",
   "description": "Generators for compoundjs",
   "main": "index.js",
+  "dependencies": {
+    "compound": "1.1.x"
+  },
+  "devDependencies": {
+    "mocha": "1.8.1",
+    "should": "1.2.2",
+    "semicov": "0.1.1"
+  },
   "scripts": {
     "test": "./node_modules/.bin/mocha --require should --require ./test/init.js test/*.test.js"
   },
