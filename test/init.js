@@ -19,9 +19,12 @@ global.getApp = function() {
 global.stubFS = stubFS;
 global.unstubFS = unstubFS;
 global.flushFS = flushFS;
+global.getFile = function(path) {
+    return memfs[path];
+};
 
 var memfs = {}, writeFileSync, readFileSync, writeSync, closeSync, existsSync,
-    mkdirSync, chmodSync, exit;
+    mkdirSync, chmodSync, readFileSync, exit;
 var fs = require('fs');
 
 function stubFS() {
@@ -36,12 +39,12 @@ function stubFS() {
     fs.mkdirSync = function (name) {
         memfs[name] = true;
     };
-    fs.chmodSync = function () {};
-    fs.writeFileSync = function (name, content) {
+    fs.chmodSync = function() {};
+    fs.writeFileSync = function(name, content) {
         memfs[name] = content;
         return name;
     };
-    fs.existsSync = function (path) {
+    fs.existsSync = function(path) {
         return path in memfs;
     };
 }
