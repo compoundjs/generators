@@ -54,13 +54,18 @@ describe('crud', function() {
         posts.should.not.include('pathTo.edit_posts');
         posts.should.not.include('pathTo.new_posts');
 
-        compound.generators.perform('scaffold', ['users', 'name', 'email']);
+        compound.generators.perform('scaffold', ['users', 'name', 'email', 'modeltest']);
 
         var users = getFile(app.root + '/app/views/users/index.ejs');
         users.should.include('pathTo.edit_user');
         users.should.include('pathTo.new_user');
         users.should.not.include('pathTo.edit_users');
         users.should.not.include('pathTo.new_users');
+
+        var usersform = getFile(app.root + '/app/views/users/_form.ejs')
+        usersform.should.include('form.input("name")');
+        usersform.should.include('form.input("email")');
+        usersform.should.include('form.input("modeltest")');
     });
 
 
