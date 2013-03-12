@@ -54,7 +54,7 @@ describe('crud', function() {
         posts.should.not.include('pathTo.edit_posts');
         posts.should.not.include('pathTo.new_posts');
 
-        compound.generators.perform('scaffold', ['users', 'name', 'email', 'modeltest']);
+        compound.generators.perform('scaffold', ['users', 'name', 'email']);
 
         var users = getFile(app.root + '/app/views/users/index.ejs');
         users.should.include('pathTo.edit_user');
@@ -62,12 +62,13 @@ describe('crud', function() {
         users.should.not.include('pathTo.edit_users');
         users.should.not.include('pathTo.new_users');
 
-        var usersform = getFile(app.root + '/app/views/users/_form.ejs')
-        usersform.should.include('form.input("name")');
-        usersform.should.include('form.input("email")');
-        usersform.should.include('form.input("modeltest")');
     });
 
+    it('should allow "model" as fieldname', function() {
+        compound.generators.perform('scaffold', ['users', 'modeltest']);
+        var usersform = getFile(app.root + '/app/views/users/_form.ejs')
+        usersform.should.include('form.input("modeltest")');
+    });
 
     it('should generate scaffold for jade', function() {
         compound.generators.perform('scaffold', ['-tpl', 'jade', 'post', 'title', 'content']);
