@@ -62,6 +62,10 @@ describe('crud', function() {
         users.should.not.include('pathTo.edit_users');
         users.should.not.include('pathTo.new_users');
 
+        var showUser = getFile(app.root + '/app/views/users/show.ejs');
+        showUser.should.include('pathTo.users');
+        showUser.should.include('pathTo.edit_user(user)');
+
     });
 
     it('should allow "model" as fieldname', function() {
