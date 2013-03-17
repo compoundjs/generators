@@ -74,6 +74,36 @@ describe('crud', function() {
         usersform.should.include('form.input("modeltest")');
     });
 
+    it('should accurately handle camelcase model name', function() {
+        compound.generators.perform('scaffold', ['SomeName', 'field']);
+        var ctl = getFile(app.root + '/app/controllers/somenames_controller.js');
+        output.should.eql([
+            'create  app/',
+            'create  app/controllers/',
+            'create  app/helpers/',
+            'create  app/views/',
+            'create  app/views/somenames/',
+            'create  app/views/layouts',
+            'create  test/',
+            'create  test/controllers/',
+            'create  app/controllers/somenames_controller.js',
+            'exists  app/',
+            'create  app/models/',
+            'create  app/models/SomeName.js',
+            'create  app/views/layouts/somenames_layout.ejs',
+            'create  app/views/somenames/_form.ejs',
+            'create  app/views/somenames/show.ejs',
+            'create  app/views/somenames/new.ejs',
+            'create  app/views/somenames/edit.ejs',
+            'create  app/views/somenames/index.ejs',
+            'create  app/helpers/somenames.js',
+            'create  test/controllers/somenames_controller_test.js',
+            'create  test/test_helper.js'
+        ]);
+        ctl.should.include('body.SomeName');
+        ctl.should.not.include('body.Somename');
+    });
+
     it('should generate scaffold for jade', function() {
         compound.generators.perform('scaffold', ['-tpl', 'jade', 'post', 'title', 'content']);
         output.should.eql([ 'create  app/',
