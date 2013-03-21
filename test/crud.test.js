@@ -45,8 +45,8 @@ describe('crud', function() {
         'create  app/views/posts/edit.ejs',
         'create  app/views/posts/index.ejs',
         'create  app/helpers/posts.js',
-        'create  test/controllers/posts_controller_test.js',
-        'create  test/test_helper.js']);
+        'create  test/controllers/posts_controller.test.js',
+        'create  test/init.js']);
 
         var posts = getFile(app.root + '/app/views/posts/index.ejs');
         posts.should.include('pathTo.edit_post');
@@ -97,8 +97,8 @@ describe('crud', function() {
             'create  app/views/somenames/edit.ejs',
             'create  app/views/somenames/index.ejs',
             'create  app/helpers/somenames.js',
-            'create  test/controllers/somenames_controller_test.js',
-            'create  test/test_helper.js'
+            'create  test/controllers/somenames_controller.test.js',
+            'create  test/init.js'
         ]);
         ctl.should.include('body.SomeName');
         ctl.should.not.include('body.Somename');
@@ -125,8 +125,8 @@ describe('crud', function() {
         'create  app/views/posts/edit.jade',
         'create  app/views/posts/index.jade',
         'create  app/helpers/posts.js',
-        'create  test/controllers/posts_controller_test.js',
-        'create  test/test_helper.js']);
+        'create  test/controllers/posts_controller.test.js',
+        'create  test/init.js']);
 
     });
 });
