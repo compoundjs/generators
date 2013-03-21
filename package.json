@@ -1,6 +1,6 @@
 {
   "name": "co-generators",
-  "version": "0.0.1-5",
+  "version": "0.0.1-6",
   "description": "Generators for compoundjs",
   "main": "index.js",
   "dependencies": {
