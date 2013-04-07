@@ -4,7 +4,8 @@
   "description": "Generators for compoundjs",
   "main": "index.js",
   "dependencies": {
-    "compound": ">= 1.1.5-17"
+    "compound": ">= 1.1.5-17",
+    "inflection": "~1.2.5"
   },
   "devDependencies": {
     "mocha": "1.8.1",
