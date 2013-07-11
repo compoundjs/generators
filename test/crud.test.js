@@ -44,7 +44,7 @@ describe('crud', function() {
         'create  app/views/posts/new.ejs',
         'create  app/views/posts/edit.ejs',
         'create  app/views/posts/index.ejs',
-        'create  app/helpers/posts.js',
+        'create  app/helpers/posts_helper.js',
         'create  test/controllers/posts_controller.test.js',
         'create  test/init.js']);
 
@@ -96,7 +96,7 @@ describe('crud', function() {
             'create  app/views/somenames/new.ejs',
             'create  app/views/somenames/edit.ejs',
             'create  app/views/somenames/index.ejs',
-            'create  app/helpers/somenames.js',
+            'create  app/helpers/somenames_helper.js',
             'create  test/controllers/somenames_controller.test.js',
             'create  test/init.js'
         ]);
@@ -124,7 +124,7 @@ describe('crud', function() {
         'create  app/views/posts/new.jade',
         'create  app/views/posts/edit.jade',
         'create  app/views/posts/index.jade',
-        'create  app/helpers/posts.js',
+        'create  app/helpers/posts_helper.js',
         'create  test/controllers/posts_controller.test.js',
         'create  test/init.js']);
 
